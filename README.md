@@ -54,6 +54,6 @@ MongoClient.connect(url, function(err, client) {
 })
 ```
 
-:page_facing_up: [Read the docs](https://www.npmjs.com/package/mongodb)
-:page_facing_up: [MongoDB database docs](https://docs.mongodb.com)
-:page_facing_up: [ObjectId](https://docs.mongodb.com/manual/reference/method/ObjectId/)
+:page_facing_up: [Read the docs](https://www.npmjs.com/package/mongodb)  
+:page_facing_up: [MongoDB database docs](https://docs.mongodb.com)  
+:page_facing_up: [ObjectId](https://docs.mongodb.com/manual/reference/method/ObjectId/)  
