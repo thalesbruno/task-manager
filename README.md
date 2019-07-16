@@ -24,7 +24,7 @@ Technologies covered
 
 Mongodb
 -------
->MongoDB description
+>The official MongoDB driver for Node.js. Provides a high-level API on top of mongodb-core that is meant for end users.
 
 Install
 ```bash
@@ -54,6 +54,6 @@ MongoClient.connect(url, function(err, client) {
 })
 ```
 
-:page_facing_up: [Read the docs](https://www.npmjs.com/package/mongodb)  
+:page_facing_up: [node.js mongodb driver docs](https://www.npmjs.com/package/mongodb)  
 :page_facing_up: [MongoDB database docs](https://docs.mongodb.com)  
 :page_facing_up: [ObjectId](https://docs.mongodb.com/manual/reference/method/ObjectId/)  
