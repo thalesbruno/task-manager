@@ -4,8 +4,23 @@ task-manager app
 <!--ts-->
 Table of contents
 -----------------
-* [MongoDB](#mongodb)
+* [Installation and usage](#installation-and-usage)
+* [Technologies covered](#technologies-covered)
+  * [MongoDB](#mongodb)
 <!--te-->
+
+Installation and usage
+======================
+
+Clone repository  
+```bash
+git clone https://github.com/thalesbruno/task-manager
+```
+
+On brand new task-manager directory created, run `npm install` to install all project dependencies.  
+
+Technologies covered
+====================
 
 Mongodb
 -------
