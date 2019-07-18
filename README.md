@@ -6,7 +6,9 @@ Table of contents
 -----------------
 * [Installation and usage](#installation-and-usage)
 * [Technologies covered](#technologies-covered)
+  * [mongoose](#mongoose)
   * [MongoDB](#mongodb)
+  * [validator](#validator)
 <!--te-->
 
 Installation and usage
@@ -21,6 +23,9 @@ On brand new task-manager directory created, run `npm install` to install all pr
 
 Technologies covered
 ====================
+
+mongoose
+--------
 
 Mongodb
 -------
@@ -57,3 +62,7 @@ MongoClient.connect(url, function(err, client) {
 :page_facing_up: [node.js mongodb driver docs](https://www.npmjs.com/package/mongodb)  
 :page_facing_up: [MongoDB database docs](https://docs.mongodb.com)  
 :page_facing_up: [ObjectId](https://docs.mongodb.com/manual/reference/method/ObjectId/)  
+
+
+validator
+---------
