@@ -36,27 +36,37 @@ const User = mongoose.model('User', {
   }
 })
 
-// const Task = mongoose.model('Task', {
-//   description: {
-//     type: String
-//   },
-//   completed: {
-//     type: Boolean,
-//     default: false
-//   }
-// })
-
-// task.save()
-//   .then(() => console.log(task))
-//   .catch((error) => console.error(error))
-
-const user = new User({
-  name: 'Jean      ',
-  email: 'Jn@mail.com',
-  password: 'pass123',
-  age: 29
+const Task = mongoose.model('Task', {
+  description: {
+    required: true,
+    type: String,
+    trim: true
+  },
+  completed: {
+    type: Boolean,
+    default: false
+  }
 })
 
-user.save()
-  .then(() => console.log(user))
+// // create user
+
+// const user = new User({
+//   name: 'Jean      ',
+//   email: 'Jn@mail.com',
+//   password: 'pass123',
+//   age: 29
+// })
+
+// user.save()
+//   .then(() => console.log(user))
+//   .catch((error) => console.error(error))
+
+// // create task
+
+const task = new Task({
+  description: 'finish node.js course'
+})
+
+task.save()
+  .then(() => console.log(task))
   .catch((error) => console.error(error))
