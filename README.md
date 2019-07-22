@@ -26,6 +26,47 @@ Technologies covered
 
 mongoose
 --------
+>Mongoose provides a straight-forward, schema-based solution to model your application data.
+
+Install
+```bash
+npm i mongoose
+```
+
+Usage  
+In `./src/db/mongoose.js`:
+```javascript
+const mongoose = require('mongoose')
+
+// connect to localhost database
+mongoose.connect('mongodb://127.0.0.1:27017/db-name', {
+  useNewUrlParser: true, 
+  useCreateIndex: true,
+  useFindAndModify: false
+})
+// the options provided above are about deprecation warnings: https://mongoosejs.com/docs/deprecations.html
+```
+
+In `./src/app.js`:
+```javascript
+require('./db/mongoose')
+```
+
+In `./src/models/resource.js`:
+```javascript
+const mongoose = require('mongoose')
+
+const Resource = mongoose.Model('Resource', {
+  name: {
+    type: String,
+    require: true
+  }
+})
+
+module.exports = Resource
+```
+
+:page_facing_up: [Read the docs](https://mongoosejs.com/docs/guide.html)
 
 Mongodb
 -------
@@ -66,3 +107,29 @@ MongoClient.connect(url, function(err, client) {
 
 validator
 ---------
+>A library of string validators and sanitizers.
+
+Install
+```bash
+npm i validator
+```
+
+Usage
+```javascript
+const validator = require('validator')
+
+// Resource mongoose model, email field:
+// ...
+email: {
+    type: String,
+    required: true,
+    trim: true,
+    lowercase: true,
+    validate(value) {
+      if (!validator.isEmail(value)) throw new Error('e-mail is invalid')
+    }
+  }
+// ...
+```
+
+:page_facing_up: [Read the docs](https://www.npmjs.com/package/validator)
