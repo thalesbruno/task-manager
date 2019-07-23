@@ -6,6 +6,7 @@ Table of contents
 -----------------
 * [Installation and usage](#installation-and-usage)
 * [Technologies covered](#technologies-covered)
+  * [bcrypt.js](#bcryptjs)
   * [mongoose](#mongoose)
   * [MongoDB](#mongodb)
   * [validator](#validator)
@@ -23,6 +24,14 @@ On brand new task-manager directory created, run `npm install` to install all pr
 
 Technologies covered
 ====================
+
+bcrypt.js
+---------
+>Optimized bcrypt in JavaScript with zero dependencies. Compatible to the C++ bcrypt binding on node.js and also working in the browser.
+
+
+
+:page_facing_up: [Read the docs](https://www.npmjs.com/package/bcryptjs)
 
 mongoose
 --------
@@ -133,3 +142,5 @@ email: {
 ```
 
 :page_facing_up: [Read the docs](https://www.npmjs.com/package/validator)
+
+:arrow_up:[Back to top](#table-of-contents)
