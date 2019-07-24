@@ -42,8 +42,12 @@ router.patch('/users/:id', async (req, res) => {
   if (!isValidRequest) return res.status(400).send({error: 'Invalid update request.'})
 
   try {
-    const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true })
+    // the method findByIdAndUpdate bypasses mongoose, so we can't use middleware
+    // this is why we are using finById
+    const user = await User.findById(req.params.id)
     if (!user) return res.status(404).send({ message: 'User not found' })
+    updates.forEach((update) => user[update] = req.body[update])
+    await user.save()
     res.send(user)
   } catch(error) {
     res.status(400).send(error)
