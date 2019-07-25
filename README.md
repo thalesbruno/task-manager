@@ -29,7 +29,24 @@ bcrypt.js
 ---------
 >Optimized bcrypt in JavaScript with zero dependencies. Compatible to the C++ bcrypt binding on node.js and also working in the browser.
 
+Install
+```bash
+npm i bcryptjs
+```
 
+Usage
+```javascript
+const bcrypt = require('bcryptjs')
+
+const myFunction = async () => {
+  const password = 'Red1234!'
+  const hashedPassword = await bcrypt.hash(password, 8)
+  const isMatch = await bcrypt.compare('red1234!', hashedPassword)
+  console.log(isMatch) //true
+}
+
+myFunction()
+```
 
 :page_facing_up: [Read the docs](https://www.npmjs.com/package/bcryptjs)
 
@@ -65,12 +82,14 @@ In `./src/models/resource.js`:
 ```javascript
 const mongoose = require('mongoose')
 
-const Resource = mongoose.Model('Resource', {
+const resourceSchema = new mongoose.Schema({
   name: {
     type: String,
     require: true
   }
 })
+
+const Resource = mongoose.model('Resource', resourceSchema)
 
 module.exports = Resource
 ```
