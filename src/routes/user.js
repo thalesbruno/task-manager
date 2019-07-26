@@ -15,9 +15,10 @@ router.post('/users', async (req, res) => {
 
 router.post('/users/login', async (req, res) => {
   try {
-    const user = User.findByCredentials(req.body.email, req.body.password)
+    const user = await User.findByCredentials(req.body.email, req.body.password)
+    res.send(user)
   } catch(error) {
-
+    res.status(400).send({error}) // check why this catch error is not catching the Error message from findByCredentials
   }
 })
 
