@@ -6,6 +6,10 @@ const taskRoute = require('./routes/task')
 const app = express()
 const port = process.env.PORT || 3000
 
+app.use((req, res, next) => {
+  res.status(503).send('Service temporarily unavailable')
+})
+
 app.use(express.json())
 app.use(userRoute)
 app.use(taskRoute)
@@ -13,14 +17,14 @@ app.use(taskRoute)
 app.listen(port, () => console.log(`Server running on port ${port}`))
 
 
-const jwt = require('jsonwebtoken')
+// const jwt = require('jsonwebtoken')
 
-const myFunction = async () => {
-  const token = jwt.sign({ _id: 'abc1234' }, 'thisismylearningclass', { expiresIn: '7 days' })
-  console.log(token)
+// const myFunction = async () => {
+//   const token = jwt.sign({ _id: 'abc1234' }, 'thisismylearningclass', { expiresIn: '7 days' })
+//   console.log(token)
   
-  const data = jwt.verify(token, 'thisismylearningclass')
-  console.log(data)
-}
+//   const data = jwt.verify(token, 'thisismylearningclass')
+//   console.log(data)
+// }
 
-myFunction()
+// myFunction()
