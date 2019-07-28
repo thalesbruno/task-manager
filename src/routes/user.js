@@ -25,6 +25,28 @@ router.post('/users/login', async (req, res) => {
   }
 })
 
+router.post('/users/logout', auth, async (req, res) => {
+  try {
+    // removing only the actual session token
+    req.user.tokens = req.user.tokens.filter((token) => token.token !== req.token)
+    await req.user.save()
+    res.send({ message: 'Sucessfully logged out' })
+  } catch(error) {
+    res.status(500).send({ error: 'Error on logging out' })
+  }
+})
+
+router.post('/users/logoutAll', auth, async (req, res) => {
+  try {
+    // removing all session tokens
+    req.user.tokens = []
+    await req.user.save()
+    res.send({ message: 'Successfully logged out from all sessions' })
+  } catch(error) {
+    res.status(500).send({ error: 'Error on logging out' })
+  }
+})
+
 router.get('/users', async (req, res) => {
   try {
     const users = await User.find()
