@@ -57,7 +57,21 @@ JWT
 
 Usage  
 
-The token is divided in three parts separated by periods. Like in:  
+```javascript
+const jwt = require('jsonwebtoken')
+
+const myFunction = async () => {
+  const token = jwt.sign({ _id: 'abc1234' }, 'thisisjustanexample', { expiresIn: '7 days' })
+  console.log(token)
+  
+  const data = jwt.verify(token, 'thisisjustanexample')
+  console.log(data)
+}
+
+myFunction()
+```
+
+>The token is divided in three parts separated by periods. Like in:  
 `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJhYmMxMjM0IiwiaWF0IjoxNTY0MTM5MDc3fQ.mZGpzs5WnvxPRQ3ZCjOSfW9poOnMunUHcHYi51ugL4o`  
 The first piece is a base64 encoded json string, known as the header contains the metadata about the token itself, like
 the type of and the algorithm used for its creation;  
@@ -65,8 +79,8 @@ The second piece, known as the body or payload, also a base64 encoded json strin
 (in our the the _id);  
 The last piece contains the signature used to verify the token.  
 
-:page_facing_up: [NPM | jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
-:page_facing_up: [RFC 7519 | JSON Web Token (JWT)](https://tools.ietf.org/html/rfc7519)
+:page_facing_up: [NPM | jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)  
+:page_facing_up: [RFC 7519 | JSON Web Token (JWT)](https://tools.ietf.org/html/rfc7519)  
 
 mongoose
 --------
