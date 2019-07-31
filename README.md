@@ -11,6 +11,7 @@ Table of contents
   * [mongoose](#mongoose)
   * [MongoDB](#mongodb)
   * [Multer](#multer)
+  * [Sharp](#sharp)
   * [validator](#validator)
 <!--te-->
 
@@ -168,6 +169,8 @@ MongoClient.connect(url, function(err, client) {
 multer
 ------
 
+sharp
+-----
 
 validator
 ---------
