@@ -1,10 +1,11 @@
+require('dotenv').config()
 const express = require('express')
 require('./db/mongoose')
 const userRoute = require('./routes/user')
 const taskRoute = require('./routes/task')
 
 const app = express()
-const port = process.env.PORT || 3000
+const port = process.env.PORT
 
 // app.use((req, res, next) => {
 //   res.status(503).send('Service temporarily unavailable')
