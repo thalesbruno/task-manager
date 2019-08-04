@@ -1,0 +1,13 @@
+FROM node:12.7.0-alpine
+WORKDIR /app
+COPY . .
+RUN ["npm", "install"]
+EXPOSE 3000
+ENV PORT=3000 \
+    SENDGRID_API_KEY=change_value \
+    MONGODB_DBNAME=change_value \
+    MONGODB_URL=change_value \
+    MONGODB_PORT=change_value \
+    JWT_SECRET=change_value 
+
+ENTRYPOINT ["npm", "start"]

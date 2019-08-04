@@ -1,0 +1,7 @@
+images/
+node_modules/
+playground/
+.env
+.gitignore
+package-lock.json
+README.md

@@ -1,0 +1,15 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    links:
+      - db
+    depends_on:
+      - "db"
+  db:
+    image: mongo
+    container_name: mongo
+    ports:
+      - "27017:27017"
