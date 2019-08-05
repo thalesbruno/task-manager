@@ -12,4 +12,21 @@ const dbConnect = async () => {
   }
 }
 
-dbConnect()
+const dbConnectHeroku = async () => {
+  try {
+    await mongoose.connect(process.env.MONGODB_URL, {
+      useNewUrlParser: true,
+      useCreateIndex: true,
+      useFindAndModify: false
+    })
+  } catch(error) {
+    console.error(error)
+  }
+}
+
+
+if (process.env.MONGODB_DBNAME) {
+  dbConnect()
+} else {
+  dbConnectHeroku()
+}
