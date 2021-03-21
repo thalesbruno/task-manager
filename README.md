@@ -1,9 +1,6 @@
-task-manager app
-================
+# task-manager app
 
-
-Installation and usage
-======================
+## Installation and usage
 
 Clone repository  
 ```bash
